@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        input {
+            margin: 5px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .heart {
+            color: red;
+            font-size: 50px;
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="percentage">❤️ Love Percentage: --% ❤️</h1>
+    <input type="text" id="name1" placeholder="Enter Name One">
+    <input type="text" id="name2" placeholder="Enter Name Two">
+    <br>
+    <button onclick="showHeart()">Submit</button>
+    <div class="heart" id="heart">❤️</div>
+
+    <script>
+        function showHeart() {
+            let name1 = document.getElementById("name1").value.toLowerCase();
+            let name2 = document.getElementById("name2").value.toLowerCase();
+            let percentage;
+            
+            if (name1 === "anjali" && name2 === "harsh" || name1 === "harsh" && name2 === "anjali") {
+                percentage = 100;
+            } else {
+                percentage = Math.floor(Math.random() * 71) + 30;
+            }
+            
+            document.getElementById("percentage").innerText = `❤️ Love Percentage: ${percentage}% ❤️`;
+            document.getElementById("heart").style.display = "block";
+        }
+    </script>
+</body>
+</html>
